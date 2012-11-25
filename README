@@ -1,0 +1,55 @@
+NAME
+    Log::Tree - lightweight but highly configurable logging class
+
+SYNOPSIS
+        use Log::Tree;
+
+        my $logger = Log::Tree::->new('foo');
+        ...
+
+ATTRIBUTES
+  facility
+    Only mandatory attirbute. Used as the syslog faclity and to
+    auto-construct a suiteable filename for logging to file.
+
+METHODS
+  add_to_buffer
+    This method is usually not needed from by callers but may be in some
+    rare ocasions that's why it's made part of the public API. It just adds
+    the passed data to the internal buffer w/o logging it in the usual ways.
+
+  clear_buffer
+    This method clears the internal log buffer.
+
+  forked
+    This method should be called after it has been fork()ed to clear the
+    internal log buffer.
+
+  get_buffer
+    Retrieve those entries from the buffer that are gte the given severity.
+
+  log
+    Log a message. Takes a hash containing at least "message" and "level".
+
+  BUILD
+    Call on instatiation to set this class up.
+
+  level_to_severity
+    Translates a numeric level to severity string.
+
+  severity_to_level
+    Translates a severity string to a numeric level.
+
+NAME
+    Log::Tree - Lightyweight logging w/ a tree based verbosity configuration
+    similar to Log4perl.
+
+AUTHOR
+    Dominik Schulz <dominik.schulz@gauner.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Dominik Schulz.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
