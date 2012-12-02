@@ -1,6 +1,6 @@
 package Log::Tree;
 {
-  $Log::Tree::VERSION = '0.14';
+  $Log::Tree::VERSION = '0.15';
 }
 BEGIN {
   $Log::Tree::AUTHORITY = 'cpan:TEX';
@@ -109,7 +109,7 @@ has 'syslog' => (
 
 has 'config' => (
     'is'    => 'rw',
-    'isa'   => 'Config::Tree',
+    'isa'   => 'Config::Yak',
     'required' => 0,
     'trigger' => \&_set_config,
 );

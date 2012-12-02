@@ -1,6 +1,6 @@
 package Log::Tree::Logger;
 {
-  $Log::Tree::Logger::VERSION = '0.14';
+  $Log::Tree::Logger::VERSION = '0.15';
 }
 BEGIN {
   $Log::Tree::Logger::AUTHORITY = 'cpan:TEX';
